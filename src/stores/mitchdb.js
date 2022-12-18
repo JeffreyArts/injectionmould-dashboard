@@ -20,7 +20,7 @@ export const mitchDB = defineStore({
     actions: {
         update() {
             return new Promise((resolve, reject) => {
-                const doc = _.merge({},_.pick( this.document, ["_id", "_rev", "currentStep", "maxSteps", "closingTime"]))
+                const doc = _.merge({},_.pick( this.document, ["_id", "_rev", "currentStep", "maxSteps", "injectionTime", "closingTime"]))
                 db.put(doc).then((res) => {
                     this.document._rev = res.rev
                     resolve(this.document)
@@ -33,7 +33,7 @@ export const mitchDB = defineStore({
                     include_docs: true,
                     attachments: true
                 }).then((result) => {
-                    _.merge(this.document,_.pick( result.rows[0].doc, ["_id", "_rev", "currentStep", "maxSteps", "closingTime"]))
+                    _.merge(this.document,_.pick( result.rows[0].doc, ["_id", "_rev", "currentStep", "maxSteps", "injectionTime", "closingTime"]))
                     return resolve(this.document)
                 }).catch(reject)
 

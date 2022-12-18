@@ -88,14 +88,14 @@
             
             <div class="vfm-buttons-container __isNarrow">
                 <span class="time-input-container">
-                    <input class="vfm-input time-input" v-model.number="moldInjectionTimeSeconds" type="number">
+                    <input class="vfm-input time-input" v-model.number="moldInjectionTimeSeconds" @change="mitchDB.update" type="number">
                     <label>seconds</label>
                 </span>
                 <span class="time-input-container">
                     :
                 </span>
                 <span class="time-input-container">
-                    <input class="vfm-input time-input" v-model.number="moldInjectionTimeMiliseconds" type="number">
+                    <input class="vfm-input time-input" v-model.number="moldInjectionTimeMiliseconds" @change="mitchDB.update" type="number">
                     <label>miliseconds</label>
                 </span>
             </div>
