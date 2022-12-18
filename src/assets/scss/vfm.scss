@@ -1,0 +1,71 @@
+.vfm__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vfm__content {
+    background-color: #fff;
+    color: $textColor;
+    padding: 32px;
+    position: relative;
+    border-radius: 4px;
+
+     h1 {
+        display: inline-block;
+        width: 100%;
+        font-size: 24px;
+        text-align: center;
+        margin: 0;
+     }
+}
+
+.vfm-close {
+    float: right;
+    margin: -8px -16px 16px 0 ;
+    width: 32px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+
+    .icon {
+        width: 100%;
+    }
+}
+
+.vfm-buttons-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+    gap: 32px;
+
+    &.__isNarrow {
+        gap: 8px;
+    }
+}
+
+.vfm-button {
+    background-color: $lightgrey;
+    color: #fff;
+    padding: 8px 32px;
+    border: none;
+    font-size: 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    color: $textColor;
+
+    &:hover {
+        background-color: $lightgrey;
+    }
+}
+
+.vfm-input {
+    font-size: 24px;
+    padding: 8px;
+    
+    &:focus {
+        outline: none;
+    }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "mitch-frontend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "add": "^2.0.6",
+    "dayjs": "^1.11.7",
+    "events": "^3.3.0",
+    "lodash": "^4.17.21",
+    "normalize.css": "^8.0.1",
+    "pinia": "^2.0.28",
+    "pouchdb-browser": "^8.0.0",
+    "sass": "^1.56.2",
+    "socket.io-client": "^4.5.4",
+    "vue": "^3.2.45",
+    "vue-final-modal": "3",
+    "vue-router": "^4.1.6",
+    "yarn": "^1.22.19"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.0.0",
+    "vite": "^4.0.0",
+    "vite-svg-loader": "^3.6.0"
+  }
+}
