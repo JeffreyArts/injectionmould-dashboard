@@ -156,9 +156,6 @@ export default defineComponent ({
     },
     methods: {
         startInjecting() {
-            if (this.mitchDB.document.currentStep == 0) {
-                this.mitchDB.document.currentStep = 1
-            }
             this.mitchDB.document.progress = 1
             this.interval = setInterval(() => {
                 if (this.mitchDB.document.progress != 1 ) {
