@@ -270,13 +270,13 @@ export default defineComponent({
 .site-footer .button {
     background-color: #fff;
     border: 0 none transparent;
-    border-radius: 16px;
-    padding: 4px 16px;
-    font-size: 16px;
+    border-radius: 32px;
+    padding: 8px 16px;
+    font-size: 20px;
     color: $accentColor;
 
     &.square {
-        width: 26px;
+        width: 40px;
         padding-left: 0;
         padding-right: 0;
     }
@@ -294,6 +294,10 @@ export default defineComponent({
             margin-left: 8px;
         }
     }
+}
+
+#current-steps .button {
+    width: 90px;
 }
 
 #mold-closing-time,
