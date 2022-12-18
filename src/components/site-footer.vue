@@ -151,19 +151,21 @@ export default defineComponent({
             this.document.injectionTime = this.injectionTime
             // this.mitchDB.update()
         },
+        mitchDB: {
+            handler: function (newValue, oldValue) {
+                this.moldClosingTimeSeconds = Math.floor(this.mitchDB.document.closingTime / 1000)
+                this.moldClosingTimeMiliseconds = this.mitchDB.document.closingTime % 1000
+                
+                this.moldInjectionTimeSeconds = Math.floor(this.mitchDB.document.injectionTime / 1000)
+                this.moldInjectionTimeMiliseconds = this.mitchDB.document.injectionTime % 1000
+            },
+            deep: true
+        },
     },
     created() {
         this.document = this.mitchDB.document
     },
     mounted() {
-        setTimeout(() => {
-
-            this.moldClosingTimeSeconds = Math.floor(this.mitchDB.document.closingTime / 1000)
-            this.moldClosingTimeMiliseconds = this.mitchDB.document.closingTime % 1000
-            
-            this.moldInjectionTimeSeconds = Math.floor(this.mitchDB.document.injectionTime / 1000)
-            this.moldInjectionTimeMiliseconds = this.mitchDB.document.injectionTime % 1000
-        })
     },
     unmounted() {
         

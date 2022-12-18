@@ -7,6 +7,7 @@ const db = new PouchDB("mitch-db")
 export const mitchDB = defineStore({
     id: "mitchDB",
     state: () => ({
+        updated: 0,
         document: {
             currentStep: 0,
             progress: 0, // 0 = not started, 1 = in progress, 2 = finished
@@ -24,6 +25,7 @@ export const mitchDB = defineStore({
                 db.put(doc).then((res) => {
                     this.document._rev = res.rev
                     resolve(this.document)
+                    this.updated++
                 }).catch(reject)
             })
         },
