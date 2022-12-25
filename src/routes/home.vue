@@ -99,6 +99,7 @@
 import siteFooter from "./../components/site-footer.vue"
 import {defineComponent} from "vue"
 import MitchDB from "../stores/mitchdb";
+import SocketIO from "../stores/socketio";
 import Icon from "./../components/icon.vue"
 import dayjs from "dayjs"
 import _ from "lodash"
@@ -109,10 +110,9 @@ export default defineComponent ({
     props: [],
     setup() {
         const mitchDB = MitchDB();
+        const socketIO = SocketIO();
 
-        return {
-            mitchDB,
-        }
+        return { mitchDB, socketIO }
     },
     data() {
         return {
@@ -157,6 +157,7 @@ export default defineComponent ({
     methods: {
         startInjecting() {
             this.mitchDB.document.progress = 1
+            this.socketIO.emit("cycle", "start")
             this.interval = setInterval(() => {
                 if (this.mitchDB.document.progress != 1 ) {
                     return
@@ -188,6 +189,8 @@ export default defineComponent ({
 
             clearInterval(this.interval);
             this.mitchDB.update()
+
+            this.socketIO.emit("cycle", "stop")
         },
         displayTime(unixTimestamp, format) {
             if (_.isNumber(unixTimestamp)) {
