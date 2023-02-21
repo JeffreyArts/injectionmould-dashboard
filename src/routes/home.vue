@@ -178,7 +178,7 @@ export default defineComponent ({
                         this.mitchDB.document.progress = 2
                         this.mitchDB.update()
                         clearInterval(this.interval);
-                        this.socketIO.emit("cycle", "done")
+                        this.socketIO.emit("cycle", "stop")
                     }
                     this.mitchDB.update()
                 }
