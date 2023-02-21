@@ -171,13 +171,14 @@ export default defineComponent ({
 
                 this.stepProgress +=1;
                 
-                if (this.stepProgress > 100) {
+                if (this.stepProgress >= 100) {
                     this.stepProgress = 0
                     this.mitchDB.document.currentStep ++
                     if (this.mitchDB.document.currentStep == this.mitchDB.document.maxSteps) {
                         this.mitchDB.document.progress = 2
                         this.mitchDB.update()
                         clearInterval(this.interval);
+                        this.socketIO.emit("cycle", "done")
                     }
                     this.mitchDB.update()
                 }
